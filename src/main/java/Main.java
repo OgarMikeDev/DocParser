@@ -13,11 +13,11 @@ public class Main {
         Elements elements = document.select(".link");
 
         elements.forEach(element -> {
-            if (String.valueOf(element).contains("https://www.hse.ru/ma/")) {
+            //Все программы бакалавриата и магистратуры
+            if (String.valueOf(element).contains("https://www.hse.ru/ma/") || String.valueOf(element).contains("https://www.hse.ru/ba/")) {
                 System.out.println(element.text());
             }
         });
-        //System.out.println(htmlParse);
     }
 
     public static String parseSite(String path) {
