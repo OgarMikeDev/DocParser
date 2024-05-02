@@ -12,7 +12,7 @@ public class Main {
         Document document = Jsoup.parse(htmlParse);
         Elements elements = document.select("a.link");
 
-        elements.forEach(System.out::println);
+        elements.forEach(element -> System.out.println(element.text()));
         //System.out.println(htmlParse);
     }
 
