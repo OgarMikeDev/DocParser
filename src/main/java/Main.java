@@ -10,9 +10,13 @@ public class Main {
     public static void main(String[] args) {
         String htmlParse = parseSite("data/code.html");
         Document document = Jsoup.parse(htmlParse);
-        Elements elements = document.select("a.link");
+        Elements elements = document.select(".link");
 
-        elements.forEach(element -> System.out.println(element.text()));
+        elements.forEach(element -> {
+            if (String.valueOf(element).contains("https://www.hse.ru/ma/")) {
+                System.out.println(element.text());
+            }
+        });
         //System.out.println(htmlParse);
     }
 
